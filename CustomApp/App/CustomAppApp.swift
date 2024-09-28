@@ -11,7 +11,7 @@ import SwiftUI
 struct CustomAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()  // Loads the MainTabView as the entry point
         }
     }
 }

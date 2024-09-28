@@ -4,10 +4,8 @@
 //
 //  Created by Jeremy Gonsalves on 2024-09-28.
 //
-
 import SwiftUI
-
-import Foundation
+import Combine  // Add this to use AnyCancellable and Combine framework
 
 // MARK: - Search View Model
 
@@ -22,6 +20,8 @@ class SearchViewModel: ObservableObject {
     
     /// The list of filtered deals based on the search query.
     @Published var filteredDeals: [Deal] = []
+    
+    private var cancellables = Set<AnyCancellable>()  // Collection to store subscriptions
     
     init(deals: [Deal]) {
         self.allDeals = deals
@@ -46,6 +46,4 @@ class SearchViewModel: ObservableObject {
             }
         }
     }
-    
-    private var cancellables = Set<AnyCancellable>()
 }
