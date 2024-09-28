@@ -1,18 +1,28 @@
-//
-//  SearchView.swift
-//  CustomApp
-//
-//  Created by Jeremy Gonsalves on 2024-09-28.
-//
-
 import SwiftUI
 
+// MARK: - Search View
 struct SearchView: View {
+    @State private var searchText = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                TextField("Search deals", text: $searchText)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                Text("Search Results for: \(searchText)")
+                    .padding()
+                
+                Spacer()
+            }
+            .navigationTitle("Search")
+        }
     }
 }
 
-#Preview {
-    SearchView()
+struct SearchView_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchView()
+    }
 }

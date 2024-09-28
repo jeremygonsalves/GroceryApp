@@ -1,18 +1,23 @@
-//
-//  CartView.swift
-//  CustomApp
-//
-//  Created by Jeremy Gonsalves on 2024-09-28.
-//
-
 import SwiftUI
 
+// MARK: - Cart View
 struct CartView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                Text("Cart View")
+                    .font(.largeTitle)
+                    .padding()
+                
+                Spacer()
+            }
+            .navigationTitle("Cart")
+        }
     }
 }
 
-#Preview {
-    CartView()
+struct CartView_Previews: PreviewProvider {
+    static var previews: some View {
+        CartView()
+    }
 }

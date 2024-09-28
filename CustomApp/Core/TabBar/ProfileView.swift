@@ -1,18 +1,23 @@
-//
-//  ProfileView.swift
-//  CustomApp
-//
-//  Created by Jeremy Gonsalves on 2024-09-28.
-//
-
 import SwiftUI
 
+// MARK: - Profile View
 struct ProfileView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                Text("Profile View")
+                    .font(.largeTitle)
+                    .padding()
+                
+                Spacer()
+            }
+            .navigationTitle("Profile")
+        }
     }
 }
 
-#Preview {
-    ProfileView()
+struct ProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileView()
+    }
 }
